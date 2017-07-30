@@ -5,10 +5,11 @@
   "license": "MIT",
   "scripts": {
     "start": "node src/index.js",
-    "start:watch": "nodemon -q src/index.js"
+    "start:watch": "nodemon src/index.js"
   },
   "dependencies": {
     "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
     "serve-favicon": "^2.4.3"
   },
   "devDependencies": {

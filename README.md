@@ -57,6 +57,23 @@ Express has extensive support for template rendering and can load and leverage H
 
 1. Let's code together!
 
+
+## Steps
+
+1. Set up view engine in `src/app.js`
+1. Create `src/views/layouts/main.hbs`
+1. Create `src/views/home.hbs`
+1. Create `src/controllers/home.js` and use it in `src/controllers/index.js` to handle requests to '/' (home) route
+1. Create `src/views/partials/htmlHead.hbs`
+1. Create `src/views/partials/header.hbs`
+1. Create `src/views/partials/footer.hbs`
+1. Create `src/views/fruits.hbs`
+1. Use `render` function in `src/controllers/fruits.js`
+1. Send `activePage` object in `src/controllers/home.js` and `src/controllers/fruits.js` and add `if` helpers to `src/views/partials/header.hbs`
+1. Use the `each` helper in `src/views/fruits.hbs`
+1. Create `views/helpers/capitalize.js` and `views/helpers/index.js`, make sure `helpers` are added to the config in `src/app.js`. Use `capitalize` in `src/views/fruits.hbs` to capitalize fruit name
+1. Update
+
 ## Resources
 - [Handlebars Docs](http://handlebarsjs.com/)
 - [Write Templates Like A Node.js Pro: Handlebars Tutorial](https://webapplog.com/handlebars/)
