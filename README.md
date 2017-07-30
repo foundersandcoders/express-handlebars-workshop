@@ -2,7 +2,7 @@
 
 **Maintainer**: [@PiotrBerebecki](https://github.com/PiotrBerebecki)
 
-Based on the [Intro workshop to Handlebars.js](https://github.com/foundersandcoders/handlebars-hapi-intro-workshop) by [@marisid](https://github.com/marisid)
+Readme based on the [Intro workshop to Handlebars.js](https://github.com/foundersandcoders/handlebars-hapi-intro-workshop) by [@marisid](https://github.com/marisid)
 
 # Express Handlebars.js workshop
 
