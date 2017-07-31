@@ -62,7 +62,7 @@ Express has extensive support for template rendering and can load and leverage H
 
 ## Steps
 
-1. Set up view engine in `src/app.js`
+1. Install `express-handlebars` npm package and set up view engine in `src/app.js`
 1. Create `src/views/layouts/main.hbs`
 1. Create `src/views/home.hbs`
 1. Create `src/controllers/home.js` and use it in `src/controllers/index.js` to handle requests to '/' (home) route
