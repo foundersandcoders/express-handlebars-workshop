@@ -1,20 +1,5 @@
 # Mentor's notes
 
-1. Ask the cohort to clone this repo
-1. Run `npm install` to install all the Node dependencies
-1. Explain the existing folder structure
-
-  Notice that in order to serve individual fruit pages we had to create a number of static `.html` pages.
-
-  <img src="./images-readme/folder-structure-fruits-html.png" width="200px" height="auto"/>
-
-  Notice also that we have two `.html` files to handle errors.
-
-  Handlebars will allow us to avoid duplication by creating template views. In fact Handlebars will allow us to delete all those `.html` files.
-
-  Let's code together!
-
-
 ## Steps
 
 1. Install `express-handlebars` npm package and set up view engine in `src/app.js` by specifying the `views` directory; handlebars view engine, and `express-handlebars` configuration object.

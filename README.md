@@ -42,7 +42,21 @@ Express has extensive support for template rendering and can load and leverage H
 - **helpers** (functions used in templates to manipulate data) to ultimately render **views**.
 
 ## Dive into coding
-**Note for mentor**: Please use the additional readme ([mentors-notes.md](./mentors-notes.md)) and follow step by step instructions for the code-along workshop.
+**Note for mentor: Please use the additional readme ([mentors-notes.md](./mentors-notes.md)) and follow step by step instructions for the code-along workshop.**
+
+1. Clone this repo
+1. Run `npm install` to install all the Node dependencies
+1. Review the existing folder structure
+
+  Notice that in order to serve individual fruit pages we had to create a number of static `.html` pages.
+
+  <img src="./images-readme/folder-structure-fruits-html.png" width="200px" height="auto"/>
+
+  Notice also that we have two `.html` files to handle errors.
+
+  Handlebars will allow us to avoid duplication by creating template views. In fact Handlebars will allow us to delete all those `.html` files.
+
+  Let's code-along together!
 
 ## Resources
 - [Handlebars Docs](http://handlebarsjs.com/)
