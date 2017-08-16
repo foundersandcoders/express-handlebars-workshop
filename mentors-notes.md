@@ -17,7 +17,7 @@
 
 ## Steps
 
-1. Install `express-handlebars` npm package and set up view engine in `src/app.js`.
+1. Install `express-handlebars` npm package and set up view engine in `src/app.js` by specifying the `views` directory; handlebars view engine, and `express-handlebars` configuration object.
 1. Create `src/views/layouts/main.hbs` and set up the main html structure for the app.
 1. Create `src/views/home.hbs` to show home page title, introduction and image.
 1. Create `src/controllers/home.js` and use it in `src/controllers/index.js` to handle requests to '/' (home) route.

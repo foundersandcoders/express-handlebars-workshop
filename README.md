@@ -42,4 +42,4 @@ Express has extensive support for template rendering and can load and leverage H
 - **helpers** (functions used in templates to manipulate data) to ultimately render **views**.
 
 ## Dive into coding
-Note for mentor: Please use the additional readme ([mentors-notes.md](./mentors-notes.md)) and follow step by step instructions for the code-along workshop.
+**Note for mentor**: Please use the additional readme ([mentors-notes.md](./mentors-notes.md)) and follow step by step instructions for the code-along workshop.
