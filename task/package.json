@@ -1,0 +1,17 @@
+{
+  "name": "express-handlebars-workshop",
+  "version": "1.0.0",
+  "author": "PiotrBerebecki",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js",
+    "start:watch": "nodemon -q src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.15.3",
+    "serve-favicon": "^2.4.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
