@@ -45,6 +45,7 @@ Express has extensive support for template rendering and can load and leverage H
 **Note for mentor: Please use the additional readme ([mentors-notes.md](./mentors-notes.md)) and follow step by step instructions for the code-along workshop.**
 
 1. Clone this repo
+1. `cd task/`
 1. Run `npm install` to install all the Node dependencies
 1. Review the existing folder structure
 
