@@ -2,7 +2,7 @@ const path = require('path');
 const fruits = require('./../model/index');
 
 exports.get = (req, res, next) => {
-  const { fruit } = req.params;
+  const { singleFruit } = req.params;
 
   if (fruits.includes(fruit)) {
     return res.sendFile(
@@ -12,7 +12,7 @@ exports.get = (req, res, next) => {
         '..',
         'public',
         'fruits',
-        `${req.params.fruit}.html`
+        `${req.params.singleFruit}.html`
       )
     );
   }

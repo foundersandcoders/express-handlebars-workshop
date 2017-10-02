@@ -13,7 +13,7 @@
 1. Use `render` function in `src/controllers/fruits.js`.
 1. Send `activePage` object in `src/controllers/home.js` and `src/controllers/fruits.js` and add `if` helpers to `src/views/partials/header.hbs`.
 1. Create `views/helpers/capitalize.js` and `views/helpers/index.js`, make sure `helpers` are added to the config in `src/app.js`. Use `capitalize` in `src/views/fruits.hbs` to capitalize fruit name (watermelon -> Watermelon)
-1. Use `render` function in `src/controllers/fruit.js` to render individual fruit. Extract name from the params.
+1. Use `render` function in `src/controllers/singlefruit.js` to render individual fruit. Extract name from the params.
 1. Create `src/views/fruit.hbs` to show individual fruit name and image.
 1. Create `views/helpers/uppercase.js` and export it in `views/helpers/index.js`. Use `uppercase` in `src/views/fruit.hbs` to convert fruit name to uppercase letters (watermelon -> WATERMELON)
 1. Update `src/controllers/error.js`. First handle `client` error.
