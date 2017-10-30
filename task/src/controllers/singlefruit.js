@@ -4,7 +4,7 @@ const fruits = require('./../model/index');
 exports.get = (req, res, next) => {
   const { singleFruit } = req.params;
 
-  if (fruits.includes(fruit)) {
+  if (fruits.includes(singleFruit)) {
     return res.sendFile(
       path.join(
         __dirname,

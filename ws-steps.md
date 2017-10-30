@@ -29,7 +29,7 @@ app.engine(
     defaultLayout: 'main',
   })
   ```
-  4. We now need to make the revevant folders. Create a views directory within src. This is what you set in the app.js file as the directory to hold the .hbs files.
+  4. We now need to make the relevant folders. Create a views directory within src. This is what you set in the app.js file as the directory to hold the .hbs files.
   5. In src/views creates a layouts directory.
   6. In src/views creates a partials directory.
 
@@ -71,7 +71,7 @@ router.get('/', home.get);
 * head to htmlHead.hbs
 * header to header.hbs
 * footer to footer.hbs
-3. The next stage is to continue creating the main.hbs layout and inserting in the partials we have created. Copy across everything inside home.hbs except for what is in the <main> tags. (The <main> tags should moved to main.js)
+3. The next stage is to continue creating the main.hbs layout and inserting in the partials we have created. Copy across everything inside home.hbs except for what is in the ```<main>``` tags. (The <main> tags should moved to main.js)
 4. Place {{{body}}} in <main> tags.
 5. Now you can insert the partials you have created into the main.hbs file. Use the [handlebars documentation](http://handlebarsjs.com/) to show you how
 
