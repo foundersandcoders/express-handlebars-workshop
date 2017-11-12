@@ -255,7 +255,7 @@ Hints
 * A css class ```.navbar__link--active``` has already been defined for you.
 
 ## (Extra) Error Refactor
-**We specified the default layout was main.hbs. We can override this directly when we render a page. We will use a specific error layout when rendering an error page.**
+**We specified the default layout as main.hbs. We can override this directly when we render a page. We will use a specific error layout when rendering an error page.**
 
 1. Create an error.hbs file in the views folder.
     ```html
@@ -264,7 +264,7 @@ Hints
       <img class="error__image" src="/images/error.png" alt="error">
     </section>
     ```
-1. Add an ```error.hbs``` file into views/layouts with the following code:
+1. Add an ```error.hbs``` file into views/layouts. It should look something like:
     ```hbs
     <!DOCTYPE html>
     <html>
@@ -279,7 +279,7 @@ Hints
     </html>
     ```
 
-3. In error.js update the code as follows:
+3. In ```error.js``` update the code as follows:
     ```js
     const path = require('path');
 
