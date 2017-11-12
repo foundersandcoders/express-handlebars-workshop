@@ -42,13 +42,13 @@ The task folder in this repo holds an existing site, including multiple html fil
 1. Run `npm install` to install all the Node dependencies
 1. Review the existing folder structure
 
-  Notice that in order to serve individual fruit pages we had to create a number of static `.html` pages.
+  Notice that in order to serve individual fruit pages we have many static `.html` pages.
 
   <img src="./images-readme/folder-structure-fruits-html.png" width="200px" height="auto"/>
 
-  Notice also that we have two `.html` files to handle errors.
+  Notice also that we have two html files to handle errors.
 
-  Handlebars will allow us to avoid duplication by creating template views. In fact Handlebars will allow us to delete all those `.html` files.
+  Handlebars will help us to avoid duplication by creating template views. In fact Handlebars will allow us to delete all those html files.
 
 ### Install handlebars
 
@@ -84,7 +84,7 @@ The task folder in this repo holds an existing site, including multiple html fil
       })
     )
     ```
-  4. We now need to make the relevant folders. Create a ```views``` directory within src. This is what you set in the app.js file as the directory to hold the .hbs files.
+  4. We now need to make the relevant folders. Create a ```views``` directory within src. This is what you set in the app.js file as the directory to hold the hbs files.
   5. In src/views create a ```layouts``` directory.
   6. In src/views create a ```partials``` directory.
 
@@ -98,8 +98,9 @@ The task folder in this repo holds an existing site, including multiple html fil
     ```hbs
     {{{ body }}} 
     ```
-    Body will be the hbs file we are rendering. So when we go to the '/' route it will be ```home.hbs```.
-    6. To start the server in development mode use the npm script from the package.json by typing this in your terminal:
+    Body will be the hbs file we are rendering.
+
+6. To start the server in development mode use the npm script from the ```package.json``` by typing this in your terminal:
     ```bash
     npm run start:watch
     ```
@@ -125,17 +126,17 @@ The task folder in this repo holds an existing site, including multiple html fil
 
 ## Split up the contents into partials
 We are now going to create partials to simplify our website. Partials allow us to reuse snippets of HTML preventing duplication.
-1. In src/views/partials create the following files:
-    * htmlHead.hbs
-    * header.hbs
-    * footer.hbs
-2. From home.hbs cut:
-    * head to htmlHead.hbs
-    * header to header.hbs
-    * footer to footer.hbs
-3. The next stage is to continue creating the ```main.hbs``` layout and inserting in the partials we have created. Copy across everything inside ```home.hbs``` except for the section tags and their content.
-4. Place ```{{{body}}}``` inside the ```<main>``` tags.
-5. Now you can insert the partials you have created into the ```main.hbs``` file. Use the [handlebars documentation](http://handlebarsjs.com/) to find out how.
+1. In src/views/partials create files for the partials that you would like and cut the appropriate content into the partial. Consider putting anything into the partials that is repeated across multiple pages and might be used in multiple layouts.
+
+    For example, you might create partial/htmlHead, and insert the html header into it. 
+    
+    *What else can you see that could be used across multiple layouts?*
+
+3. The next stage is to continue creating the layout in ```main.hbs```. The goal is to have a layout that you can use for all pages on this site except error pages. **Tips**:
+    * Use the [docs](http://handlebarsjs.com/) to find the syntax for inserting partials.
+    * As well as partials you can also place things such as ```<html>```, ```<body>```, ```<main>```, and ```<script>``` tags in here.
+    * Make sure you keep the ```{{body}}```.
+    * After finishing the main layout, ```home.hbs``` should just include content specific to the page (e.g. the content inside ```<section>``` tags).
 
 ## Creating The Fruits Page
 1. In src/views create a ```fruits.hbs``` file
