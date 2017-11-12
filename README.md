@@ -146,7 +146,7 @@ We are now going to create partials to simplify our website. Partials allow us t
 
 5. Delete all but one of the list items.
 
-**Open up src/model/index.js and take a look. We will use this list for creating out fruits page.**
+**Open up src/model/index.js and take a look. We will use this list for creating our fruits page.**
 
 6. Now go back to src/controllers/fruits.js and require in the model of fruits.
     ```js
