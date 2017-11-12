@@ -57,5 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
-# Removed IDEA folder
+# Removed IDEA folder used by webstorm IDE
 .idea
