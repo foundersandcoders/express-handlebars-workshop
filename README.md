@@ -6,7 +6,6 @@
 
 This is a workshop designed as a code along to learn about html templating using Handlebars.js.
 The main objectives of the workshop are to:
-- be introduced to the MVC (Model - View - Controller) model
 - learn how to serve dynamic files using Handlebars.js templates
 - learn how to use Handlebars views, layouts and partials
 - be introduced to Handlebars helpers
