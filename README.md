@@ -31,7 +31,9 @@ Express has extensive support for template rendering and can load and leverage H
 
 ## Dive into coding
 
-**Follow along with these steps to refactor an existing site, removing lots of duplication in the html and taking advantage of handlebars' helpers.**
+**The Task**
+
+The task folder in this repo holds an existing site, including multiple html files. Many of these html files include duplicated code. We are going to use the power of handlebars templates, partials and helpers to remove this duplication, dramatically reducing the number of files and amount of code.
 
 ### Set Up
 
