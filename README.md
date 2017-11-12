@@ -19,7 +19,10 @@ The main objectives of the workshop are to:
 <h1>{{title}}</h1>
 <p>{{description}}</p>
 ```
-- Handlebars can be used for both client-side and server-side rendering.
+- Handlebars can be used for both client-side and server-side *rendering*.
+
+**What is rendering?**
+Rendering generally means generating an image from code. In the context of express it is slightly different. When we use the [```render```](http://expressjs.com/en/api.html#res.render) function in express, we are telling it to take various pieces of input and compose them into an html string to be sent to the client. This wont actually be turned into an image until it hits the browser.
 
 ## Using Handlebars with Express
 Express has extensive support for template rendering and can load and leverage Handlebars.js with the full use of:
