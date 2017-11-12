@@ -89,7 +89,7 @@ The task folder in this repo holds an existing site, including multiple html fil
   6. In src/views create a ```partials``` directory.
 
 
-### Loading up main page
+### Serving the home page
 
 1. Create a ```home.hbs``` in the views directory
 1. Navigate to public/index.html. Copy all the contents to ```home.hbs```.
@@ -124,7 +124,7 @@ The task folder in this repo holds an existing site, including multiple html fil
     router.get('/', home.get);
     ```
 
-## Split up the contents into partials
+### Split up the contents into partials
 We are now going to create partials to simplify our website. Partials allow us to reuse snippets of HTML preventing duplication.
 1. In src/views/partials create files for the partials that you would like and cut the appropriate content into the partial. Consider putting anything into the partials that is repeated across multiple pages and might be used in multiple layouts.
 
@@ -138,7 +138,7 @@ We are now going to create partials to simplify our website. Partials allow us t
     * Make sure you keep the ```{{body}}```.
     * After finishing the main layout, ```home.hbs``` should just include content specific to the page (e.g. the content inside ```<section>``` tags).
 
-## Creating The Fruits Page
+### Creating The Fruits Page
 1. In src/views create a ```fruits.hbs``` file
 1. Open public/fruits.html and copy its contents to the ```fruits.hbs``` file
 1. Delete ```fruits.html```
@@ -155,7 +155,7 @@ We are now going to create partials to simplify our website. Partials allow us t
     const fruits = require('./../model/index');
     ```
 
-    ```res.render``` also takes an object as a optional second argument.  Within the view values passed in on the options object will be available as variables named after the object keys. This allows us to insert values or use values along with handlebars helpers (see below!) to otherwise customise the view.
+    ```res.render``` also takes an object as an optional second argument.  Within the view (e.g the hbs file being rendered) values passed in on the options object will be available as variables named after the object keys. This allows us to insert values or use values along with handlebars helpers (see below!) to otherwise customise the view.
 
 7.Change the render function in ```fruits.js``` to the following:
 
@@ -166,9 +166,9 @@ We are now going to create partials to simplify our website. Partials allow us t
     ```
   We have passed the fruits model array to the ```render``` function, thereby making it available in ```fruits.hbs```.
 
-## Using Helpers
+#### Using Helpers
 
-**We can now use handlebars' built in helpers to dynamically generate HTML. We are going to use the ```each``` helper to iterate over the fruits array  (similarly to javascripts forEach array method).**
+**We can now use handlebars' built in helpers to dynamically generate HTML. We are going to use the ```each``` helper to iterate over the fruits array  (similarly to javascript's forEach array method).**
 
 1. We want to iterate over the fruits array for each one creating a list item. 
 
@@ -192,9 +192,9 @@ We are now going to create partials to simplify our website. Partials allow us t
 
 
 
-## Rendering Individual Fruits Pages
+### Rendering Individual Fruits Pages
 
-**In public/fruits we have multiple html files and we would like to create these all using a single hbs file. Appply the same steps as above to achieve this.**
+**In public/fruits we have multiple html files and we would like to create these all using a single hbs file. Apply the same steps as above to achieve this.**
 
 Hints:
 
@@ -202,13 +202,13 @@ Hints:
 2. Change the controllers/singlefruit.js.
 3. In the previous example we passed an array as an object property. You can make as many key value pairs on the object as you want, and they don't have to be arrays.
 
-## Helpers
-You have come across the ```each``` and ```if``` helpers that are built in with handlebars, but we can also create our own helpers in plain javascript.
+### Custom Helpers
+You have come across the ```each``` helper that is built in to handlebars, but we can also create our own helpers in plain javascript.
 
 1. Within views create a helpers directory
 1. Within views/helpers create the following files:
-* uppercase.js - this will contain a helper for making a string uppercase.
-* index.js - this will be an index for all the helpers, and will export them on an object.
+    * ```uppercase.js``` - this will contain a helper for making a string uppercase.
+    * ```index.js``` - this will be an index for all the helpers (more to come later!), and will export them on an object.
 
 3. We want to to make all the letters in the fruit name in ```fruits.hbs``` uppercase. In ```uppercase.js``` add the following code:
     ```js
@@ -220,7 +220,7 @@ You have come across the ```each``` and ```if``` helpers that are built in with 
       uppercase: require('./uppercase'),
     };
     ```
-5. in src/app.js require in the helper from views/helpers/index.js:
+5. In src/app.js require in the helper from views/helpers/index.js:
     ```js
     const helpers = require('./views/helpers/index');
     ```
@@ -251,7 +251,8 @@ You have come across the ```each``` and ```if``` helpers that are built in with 
 
 Hints
 * Pass an object from within the relevant controller to help you change the css appropriately.
-* Use the appropriate handlebars helper.
+* Use the appropriate handlebars helper, [see docs](http://handlebarsjs.com/).
+* A css class ```.navbar__link--active``` has already been defined for you.
 
 ## (Extra) Error Refactor
 **We specified the default layout was main.hbs. We can override this directly when we render a page. We will use a specific error layout when rendering an error page.**
