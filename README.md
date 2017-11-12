@@ -140,7 +140,7 @@ We are now going to create partials to simplify our website. Partials allow us t
 1. In src/views create a ```fruits.hbs``` file
 1. Open public/fruits.html and copy its contents to the ```fruits.hbs``` file
 1. Delete ```fruits.html```
-1. Delete everything from ```fruits.hbs``` that you have created partials for.
+1. Replace everything in ```fruits.hbs``` that you have created partials for, and replace with the appropriate partials.
 
 **See all the many list items? We will create these programmatically using handlebars.**
 
