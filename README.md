@@ -153,7 +153,7 @@ We are now going to create partials to simplify our website. Partials allow us t
     const fruits = require('./../model/index');
     ```
 
-    ```res.render``` also takes an object as an argument which can be used in the hbs file to insert content. Content will be available as a variable named as the object key(s).
+    ```res.render``` also takes an object as a optional second argument.  Within the view values passed in on the options object will be available as variables named after the object keys. This allows us to insert values or use values along with handlebars helpers (see below!) to otherwise customise the view.
 
 7.Change the render function in ```fruits.js``` to the following:
 
