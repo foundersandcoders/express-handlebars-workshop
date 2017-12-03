@@ -55,7 +55,7 @@ The task folder in this repo holds an existing site, including multiple html fil
  1. In the tasks directory run the follwing code:
 
     ```bash
-    npm i --save express-handlebars
+    npm i express-handlebars
     ```
 
 ### Add handlebars to your project
