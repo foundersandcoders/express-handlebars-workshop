@@ -11,7 +11,7 @@ The main objectives of the workshop are to:
 - be introduced to Handlebars helpers
 
 ## What is a template engine and what is Handlebars.js?
-- A template engine is basically software that is designed to combine reusable text (i.e. templates) with data in order to generate HTML.
+- A template engine is software that is designed to combine reusable text (i.e. templates) with data in order to generate HTML.
 - Handlebars.js is one of the most popular JavaScript templating engines that builds on top of the [Mustache](https://github.com/janl/mustache.js) templating engine and has therefore compatible syntax with Mustache.
 - Handlebars is designed so that it minimises writing lots of JavaScript logic inside the templates. Unlike other template engines such as Jade, it requires full HTML code and can have embedded placeholders that can "hold" data. For example:
 ```hbs
