@@ -2,7 +2,7 @@
 
 **Maintainer**: [@PiotrBerebecki](https://github.com/PiotrBerebecki)
 
-# Express Handlebars.js code-along workshop
+# Express Handlebars.js Workshop
 
 This is a workshop designed as a code along to learn about html templating using Handlebars.js.
 The main objectives of the workshop are to:
