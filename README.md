@@ -21,7 +21,7 @@ The main objectives of the workshop are to:
 - Handlebars can be used for both client-side and server-side *rendering*.
 
 **What is rendering?**
-Rendering generally means generating an image from code. In the context of express / handlebars it is slightly different. When we use the [```render```](http://expressjs.com/en/api.html#res.render) function in express, we are telling  express to use the rendering engine (in our case handlebars) to take various pieces of input and compose them into an html string to be sent to the client. This wont actually be turned into an image until it hits the browser.
+In the context of software, rendering generally means [generating an image from code](https://en.wikipedia.org/wiki/Software_rendering). In the context of express / handlebars it is slightly different. When we use the [```render```](http://expressjs.com/en/api.html#res.render) function in express, we are telling  express to use the rendering engine (in our case handlebars) to take various pieces of input and compose them into an html string to be sent to the client. If the client is a web browser, it will take care of turning the string into an image on the users screen.
 
 ## Using Handlebars with Express
 Express has extensive support for template rendering and can load and leverage Handlebars.js with the full use of:
