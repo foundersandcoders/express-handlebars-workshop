@@ -142,7 +142,7 @@ We are now going to create partials to simplify our website. Partials allow us t
 1. In src/views create a ```fruits.hbs``` file
 1. Open public/fruits.html and copy its contents to the ```fruits.hbs``` file
 1. Delete ```fruits.html```
-1. Replace everything in ```fruits.hbs``` that you have created partials for, and replace with the appropriate partials.
+1. Remove everything in ```fruits.hbs``` that you have created partials for and inserted in the main layout. The content remaining in fruit.hbs is what will be rendered as ```{{{ body }}}``` in the main.hbs layout.
 
 **See all the many list items? We will create these programmatically using handlebars.**
 
@@ -179,7 +179,7 @@ We are now going to create partials to simplify our website. Partials allow us t
         <li class="fruit__item">
           <a class="fruit__link" href="/fruits/{{this}}"><div class="fruit__image" style="background-image: url(/images/fruits/{{this}}.jpg)"></div></a>
           <div class="fruit__info">
-            <h2 class="fruit__name">{{capitalize this}}</h2>
+            <h2 class="fruit__name">{{this}}</h2>
             <svg class="fruit__fav-btn"><use id="js-fav-btn" xlink:href="#icon-heart"></use></svg>
           </div>
         </li>
