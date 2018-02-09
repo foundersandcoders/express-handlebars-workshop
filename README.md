@@ -91,12 +91,14 @@ The task folder in this repo holds an existing site, including multiple html fil
 
 ### Serving the home page
 
-1. Create a ```home.hbs``` in the views directory
-1. Navigate to public/index.html. Copy all the contents to ```home.hbs```.
+1. In the views directory, create a file called `home.hbs`.
+2. Inside ./layouts, create a ```main.hbs```
+1. Navigate to public/index.html. Copy all the contents into ```main.hbs```.
 1. Delete public/index.html.
-1. In src/views/layouts create a main.hbs file and insert the following code:
+2. Inside `main.hbs`, select everything inside the ```<main>``` tag (not the `<main>` tag itself!). Copy this and paste into `home.hbs`.  
+1. In `main.hbs`, delete everything inside `<main>` tag  and replace it with the following code:
     ```hbs
-    {{{ body }}} 
+    {{{ body }}}
     ```
     Body will be the hbs file we are rendering.
 
@@ -128,13 +130,22 @@ The task folder in this repo holds an existing site, including multiple html fil
 We are now going to create partials to simplify our website. Partials allow us to reuse snippets of HTML preventing duplication.
 1. In src/views/partials create files for the partials that you would like and cut the appropriate content into the partial. Consider putting anything into the partials that is repeated across multiple pages and might be used in multiple layouts.
 
-    For example, you might create partial/htmlHead, and insert the html header into it. 
-    
+    For example, you might create partial/htmlHead, and insert the html header into it:
+
+    ```hbs
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" href="/css/styles.css">
+      <title>Fruit Market</title>
+    </head>
+    ```
+
     *What else can you see that could be used across multiple layouts?*
 
 3. The next stage is to continue creating the layout in ```main.hbs```. The goal is to have a layout that you can use for all pages on this site except error pages. **Tips**:
     * Use the [docs](http://handlebarsjs.com/) to find the syntax for inserting partials.
-    * As well as partials you can also place things such as ```<html>```, ```<body>```, ```<main>```, and ```<script>``` tags in here.
     * Make sure you keep the ```{{body}}```.
     * After finishing the main layout, ```home.hbs``` should just include content specific to the page (e.g. the content inside ```<section>``` tags).
 
@@ -170,7 +181,7 @@ We are now going to create partials to simplify our website. Partials allow us t
 
 **We can now use handlebars' built in helpers to dynamically generate HTML. We are going to use the ```each``` helper to iterate over the fruits array  (similarly to javascript's forEach array method).**
 
-1. We want to iterate over the fruits array for each one creating a list item. 
+1. We want to iterate over the fruits array for each one creating a list item.
 
     ```hbs
 
@@ -245,7 +256,7 @@ You have come across the ```each``` helper that is built in to handlebars, but w
 8. **Challenge:** Create a helper that capitalises the first letter of the fruit name title for each of the multiple fruits in ```fruits.hbs```. On the /fruits page the title associated with each of the multiple fruit images should be capitalised.
 
 
-## (Stretch) Passing Objects to Change CSS 
+## (Stretch) Passing Objects to Change CSS
 
 **Challenge: Underline the current page link. When on the home page, home should be underlined, and when on the fruits page, fruits should be underlined.**
 
