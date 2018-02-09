@@ -95,7 +95,7 @@ The task folder in this repo holds an existing site, including multiple html fil
 2. Inside ./layouts, create a ```main.hbs```
 1. Navigate to public/index.html. Copy all the contents into ```main.hbs```.
 1. Delete public/index.html.
-2. Inside `main.hbs`, select everything inside the ```<main>``` tag (not the `<main>` tag itself!). Copy this and paste into `home.hbs`.  
+2. Inside `main.hbs`, select everything inside the ```<main>``` tag (not the `<main>` tag itself). Copy this and paste into `home.hbs`.  
 1. In `main.hbs`, delete everything inside `<main>` tag  and replace it with the following code:
     ```hbs
     {{{ body }}}
@@ -153,7 +153,7 @@ We are now going to create partials to simplify our website. Partials allow us t
 1. In src/views create a ```fruits.hbs``` file
 1. Open public/fruits.html and copy its contents to the ```fruits.hbs``` file
 1. Delete ```fruits.html```
-1. Remove everything in ```fruits.hbs``` that you have created partials for and inserted in the main layout. The content remaining in fruit.hbs is what will be rendered as ```{{{ body }}}``` in the main.hbs layout.
+1. Remove everything in ```fruits.hbs``` that you have created partials for and inserted in the main layout. (**Note**: Keep the `<script src="/js/fruit-fav.js">` inside `fruits.hbs` for the time being, we'll address this in the stretch goal). The content remaining in fruit.hbs is what will be rendered as ```{{{ body }}}``` in the main.hbs layout.
 
 **See all the many list items? We will create these programmatically using handlebars.**
 
@@ -256,7 +256,9 @@ You have come across the ```each``` helper that is built in to handlebars, but w
 8. **Challenge:** Create a helper that capitalises the first letter of the fruit name title for each of the multiple fruits in ```fruits.hbs```. On the /fruits page the title associated with each of the multiple fruit images should be capitalised.
 
 
-## (Stretch) Passing Objects to Change CSS
+## Stretch Goals
+
+### Passing Objects to Change CSS
 
 **Challenge: Underline the current page link. When on the home page, home should be underlined, and when on the fruits page, fruits should be underlined.**
 
@@ -264,6 +266,21 @@ Hints
 * Pass an object from within the relevant controller to help you change the css appropriately.
 * Use the appropriate handlebars helper, [see docs](http://handlebarsjs.com/).
 * A css class ```.navbar__link--active``` has already been defined for you.
+
+### Changing the position of `<script src="/js/fruit-fav.js" />`
+
+**You may have noticed that the position of the `fruit-fav.js` `<script>` tag is a bit weird...If you use the inspector, it's currently inside `<main>`**.
+
+![](https://i.imgur.com/CRVGGUA.png)
+
+This is not good practice! `<script>` tags that pull in `js` files you've made yourself should usually be at the bottom of the `<body>`, so that they only load after all the HTML has been loaded.
+
+Could you refactor this so that `<script src="/js/fruit-fav.js" />` is included at the bottom of the `<body>`, BUT only on the `fruits.hbs` page?
+
+Hints
+* The logic for this will be in `main.hbs`
+* Use the appropriate handlebars helper, [see docs](http://handlebarsjs.com/).
+
 
 ## (Extra) Error Refactor
 **We specified the default layout as main.hbs. We can override this directly when we render a page. We will use a specific error layout when rendering an error page.**
