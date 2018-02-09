@@ -38,9 +38,9 @@ The task folder in this repo holds an existing site, including multiple html fil
 ### Set Up
 
 1. Clone this repo
-1. `cd task/`
-1. Run `npm install` to install all the Node dependencies
-1. Review the existing folder structure
+2. `cd task/`
+3. Run `npm install` to install all the Node dependencies
+4. Review the existing folder structure
 
   Notice that in order to serve individual fruit pages we have many static `.html` pages.
 
@@ -85,33 +85,33 @@ The task folder in this repo holds an existing site, including multiple html fil
     )
     ```
   4. We now need to make the relevant folders. Create a ```views``` directory within src. This is what you set in the app.js file as the directory to hold the hbs files.
-  5. In src/views create a ```layouts``` directory.
-  6. In src/views create a ```partials``` directory.
+  5. In `./src/views` create a ```layouts``` directory.
+  6. In `./src/views` create a ```partials``` directory.
 
 
 ### Serving the home page
 
-1. In the views directory, create a file called `home.hbs`.
-2. Inside ./layouts, create a ```main.hbs```
-1. Navigate to public/index.html. Copy all the contents into ```main.hbs```.
-1. Delete public/index.html.
-2. Inside `main.hbs`, select everything inside the ```<main>``` tag (not the `<main>` tag itself). Copy this and paste into `home.hbs`.  
-1. In `main.hbs`, delete everything inside `<main>` tag  and replace it with the following code:
+1. Inside `./src/views/layouts`, create ```main.hbs```.
+2. Navigate to `./public/index.html`. Copy all the contents into ```main.hbs```.
+3. Delete `./public/index.html`.
+4. In `./src/views`, create a file called `home.hbs`.
+5. Inside `main.hbs`, select everything inside the ```<main>``` tag (not the `<main>` tag itself). Copy this and paste into `home.hbs`.  
+6. In `main.hbs`, delete everything inside `<main>` tag  and replace it with the following code:
     ```hbs
     {{{ body }}}
     ```
     Body will be the hbs file we are rendering.
 
-6. To start the server in development mode use the npm script from the ```package.json``` by typing this in your terminal:
+7. To start the server in development mode use the npm script from the ```package.json``` by typing this in your terminal:
     ```bash
     npm run start:watch
     ```
 
     Load up the server and go to localhost:3000 in your browser; expect to see a 404 error. We are now going to serve up the ```home.hbs``` file.
 
-7. Create a ```home.js``` in src/controllers
+8. Create a ```home.js``` in `./src/controllers`
 
-8. In ```home.js``` add the following code:
+9. In ```home.js``` add the following code:
     ```js
     exports.get = (req, res) => {
       res.render('home');
@@ -119,16 +119,16 @@ The task folder in this repo holds an existing site, including multiple html fil
     ```
     Here ```res.render``` renders a view and sends a rendered HTML string to the client.
 
-9. In src/controllers/index.js require in ```home.js```.
+10. In `./src/controllers/index.js` require in ```home.js```.
 
-10. Add the following line after files are required in:
+11. Add the following line after files are required in:
     ``` js
     router.get('/', home.get);
     ```
 
 ### Split up the contents into partials
 We are now going to create partials to simplify our website. Partials allow us to reuse snippets of HTML preventing duplication.
-1. In src/views/partials create files for the partials that you would like and cut the appropriate content into the partial. Consider putting anything into the partials that is repeated across multiple pages and might be used in multiple layouts.
+1. In `./src/views/partials` create files for the partials that you would like and cut the appropriate content into the partial. Consider putting anything into the partials that is repeated across multiple pages and might be used in multiple layouts.
 
     For example, you might create partial/htmlHead, and insert the html header into it:
 
@@ -144,16 +144,16 @@ We are now going to create partials to simplify our website. Partials allow us t
 
     *What else can you see that could be used across multiple layouts?*
 
-3. The next stage is to continue creating the layout in ```main.hbs```. The goal is to have a layout that you can use for all pages on this site except error pages. **Tips**:
+2. The next stage is to continue creating the layout in ```main.hbs```. The goal is to have a layout that you can use for all pages on this site except error pages. **Tips**:
     * Use the [docs](http://handlebarsjs.com/) to find the syntax for inserting partials.
     * Make sure you keep the ```{{body}}```.
     * After finishing the main layout, ```home.hbs``` should just include content specific to the page (e.g. the content inside ```<section>``` tags).
 
 ### Creating The Fruits Page
-1. In src/views create a ```fruits.hbs``` file
-1. Open public/fruits.html and copy its contents to the ```fruits.hbs``` file
-1. Delete ```fruits.html```
-1. Remove everything in ```fruits.hbs``` that you have created partials for and inserted in the main layout. (**Note**: Keep the `<script src="/js/fruit-fav.js">` inside `fruits.hbs` for the time being, we'll address this in the stretch goal). The content remaining in fruit.hbs is what will be rendered as ```{{{ body }}}``` in the main.hbs layout.
+1. In `./src/views` create a ```fruits.hbs``` file
+2. Open `./public/fruits.html` and copy its contents to the ```fruits.hbs``` file
+3. Delete ```fruits.html```
+4. Remove everything in ```fruits.hbs``` that you have created partials for and inserted in the main layout. (**Note**: Keep the `<script src="/js/fruit-fav.js">` inside `fruits.hbs` for the time being, we'll address this in the stretch goal). The content remaining in fruit.hbs is what will be rendered as ```{{{ body }}}``` in the main.hbs layout.
 
 **See all the many list items? We will create these programmatically using handlebars.**
 
@@ -161,14 +161,14 @@ We are now going to create partials to simplify our website. Partials allow us t
 
 **Open up src/model/index.js and take a look. We will use this list for creating our fruits page.**
 
-6. Now go back to src/controllers/fruits.js and require in the model of fruits.
+6. Now go back to `./src/controllers/fruits.js` and require in the model of fruits.
     ```js
     const fruits = require('./../model/index');
     ```
 
     ```res.render``` also takes an object as an optional second argument.  Within the view (e.g the hbs file being rendered) values passed in on the options object will be available as variables named after the object keys. This allows us to insert values or use values along with handlebars helpers (see below!) to otherwise customise the view.
 
-7.Change the render function in ```fruits.js``` to the following:
+7. Change the render function in ```fruits.js``` to the following:
 
     ```js
     exports.get = (req, res) => {
@@ -210,14 +210,14 @@ We are now going to create partials to simplify our website. Partials allow us t
 Hints:
 
 1. Copy across the relevant HTML code to an hbs file.
-2. Change the controllers/singlefruit.js.
+2. Change the `./src/controllers/singlefruit.js`.
 3. In the previous example we passed an array as an object property. You can make as many key value pairs on the object as you want, and they don't have to be arrays.
 
 ### Custom Helpers
 You have come across the ```each``` helper that is built in to handlebars, but we can also create our own helpers in plain javascript.
 
 1. Within views create a helpers directory
-1. Within views/helpers create the following files:
+2. Within views/helpers create the following files:
     * ```uppercase.js``` - this will contain a helper for making a string uppercase.
     * ```index.js``` - this will be an index for all the helpers (more to come later!), and will export them on an object.
 
@@ -231,7 +231,7 @@ You have come across the ```each``` helper that is built in to handlebars, but w
       uppercase: require('./uppercase'),
     };
     ```
-5. In src/app.js require in the helper from views/helpers/index.js:
+5. In `./src/app.js` require in the helper from `./src/views/helpers/index.js`:
     ```js
     const helpers = require('./views/helpers/index');
     ```
@@ -248,7 +248,7 @@ You have come across the ```each``` helper that is built in to handlebars, but w
       })
     );
     ```
-7. We now need to use this in our ```singlefruit.hbs``` file. Update the ```<h1>``` element in the singlefruit.hbs as follows:
+7. We now need to use this in our ```singlefruit.hbs``` file. Update the ```<h1>``` element in the `singlefruit.hbs` as follows:
     ```hbs
       <h1 class="main__title">{{uppercase singleFruit}}</h1>
     ```
@@ -285,14 +285,14 @@ Hints
 ## (Extra) Error Refactor
 **We specified the default layout as main.hbs. We can override this directly when we render a page. We will use a specific error layout when rendering an error page.**
 
-1. Create an error.hbs file in the views folder.
+1. Create an error.hbs file in the `./src/views` folder.
     ```html
     <section class="error">
       <p class="error__desc">{{statusCode}}. <span class="error__msg">{{errorMessage}}</span></p>
       <img class="error__image" src="/images/error.png" alt="error">
     </section>
     ```
-1. Add an ```error.hbs``` file into views/layouts. It should look something like:
+2. Add an ```error.hbs``` file into `./src/views/layouts`. It should look something like:
     ```hbs
     <!DOCTYPE html>
     <html>
