@@ -95,14 +95,14 @@ The task folder in this repo holds an existing site, including multiple html fil
 2. Navigate to `./public/index.html`. Copy all the contents into ```main.hbs```.
 3. Delete `./public/index.html`.
 4. In `./src/views`, create a file called `home.hbs`.
-5. Inside `main.hbs`, select everything inside the ```<main>``` tag (not the `<main>` tag itself). Copy this and paste into `home.hbs`.  
+5. Inside `main.hbs`, select everything inside the ```<main>``` tag (not the `<main>` tag itself). Copy this and paste into `home.hbs`. `home.hbs` should just include content specific to the 'home' page (e.g. the content inside ```<section>``` tags).  
 6. In `main.hbs`, delete everything inside `<main>` tag  and replace it with the following code:
     ```hbs
     {{{ body }}}
     ```
-    Body will be the hbs file we are rendering.
+    `{{{ body }}}` will be the hbs file we are rendering.
 
-7. To start the server in development mode use the npm script from the ```package.json``` by typing this in your terminal:
+7. To start the server in development mode (where the script 'watches' any changes made to server), use the npm script from the ```package.json``` by typing this in your terminal:
     ```bash
     npm run start:watch
     ```
@@ -144,10 +144,9 @@ We are now going to create partials to simplify our website. Partials allow us t
 
     *What else can you see that could be used across multiple layouts?*
 
-2. The next stage is to continue creating the layout in ```main.hbs```. The goal is to have a layout that you can use for all pages on this site except error pages. **Tips**:
+2. The next stage is to continue refactoring the layout in ```main.hbs```. The goal is to have a layout that you can use for all pages on this site except error pages. **Tips**:
     * Use the [docs](http://handlebarsjs.com/) to find the syntax for inserting partials.
-    * Make sure you keep the ```{{body}}```.
-    * After finishing the main layout, ```home.hbs``` should just include content specific to the page (e.g. the content inside ```<section>``` tags).
+    * Make sure you keep the ```{{body}}```.    
 
 ### Creating The Fruits Page
 1. In `./src/views` create a ```fruits.hbs``` file
