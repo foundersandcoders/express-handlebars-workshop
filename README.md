@@ -161,7 +161,10 @@ We are now going to create partials to simplify our website. Partials allow us t
 
 2. The next stage is to continue refactoring the layout in `main.hbs`. The goal is to have a layout that you can use for all pages on this site except error pages. **Tips**:
    * Use the [docs](http://handlebarsjs.com/) to find the syntax for inserting partials.
-   * Make sure you keep the `{{body}}`.
+   * Make sure you keep the 
+   ```hbs
+     {{{body}}}
+   ```
 
 ### Creating The Fruits Page
 
