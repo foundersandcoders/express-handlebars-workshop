@@ -8,7 +8,7 @@
     "start:watch": "nodemon -q src/index.js"
   },
   "dependencies": {
-    "express": "^4.15.3",
+    "express": "^4.18.2",
     "serve-favicon": "^2.4.3"
   },
   "devDependencies": {
